@@ -8,13 +8,13 @@
 		<div class="form-group">
   		 <label class="col-md-4 control-label" for="Company Name">Nombre</label>  
   		 <div class="col-md-6">
-  			<input id="Company Name" name="Company Name" type="text" placeholder="Company Name" class="form-control input-md" required="">
+  			<input id="Company Name" name="inp_name" type="text" placeholder="Nombre completo" class="form-control input-md" required="">
   		 </div>
 		</div>
 		<div class="form-group">
   		 <label class="col-md-4 control-label" for="Company Name">Apellido</label>  
   		 <div class="col-md-6">
-  			<input id="Company Name" name="Company Name" type="text" placeholder="Company Name" class="form-control input-md" required="">
+  			<input id="Company Name" name="inp_apelli" type="text" placeholder="Apellido completo" class="form-control input-md" required="">
   		 </div>
 		</div>
 
@@ -33,14 +33,14 @@
 		<div class="form-group">
   		 <label class="col-md-4 control-label" for="User Name">Fecha de nacimiento</label>  
   		 <div class="col-md-6">
-  		  <input  name="" type="date" placeholder="User Name" class="form-control input-md" required="">
+  		  <input  name="inp_fecha_nacimi" type="date" placeholder="Fecha de nacimiento" class="form-control input-md" required="">
  		 </div>
 		</div>
 
 		<div class="form-group">
-  		 <label class="col-md-4 control-label" for="User Name">Tipo de afiliado</label>  
+  		 <label class="col-md-4 control-label" for="Tipo de afiliado">Tipo de afiliado</label>  
   		 <div class="col-md-6">
-  		  <select class="form-control">
+  		  <select class="form-control" name="slt_tip_afilia">
   		  	<option></option>
   		  	<option value="1">Tarjeta de identidad</option>
   		  	<option value="2">Cedula</option>
@@ -49,16 +49,16 @@
  		 </div>
 		</div>
 		<div class="form-group">
-  		 <label class="col-md-4 control-label" for="User Name">Nick de usuario</label>  
+  		 <label class="col-md-4 control-label" for="Nick de usuario">Nick de usuario</label>  
   		 <div class="col-md-6">
-  		  <input  name="" type="text" placeholder="User Name" class="form-control input-md" required="">
+  		  <input  name="inp_nick_user" type="text" placeholder="Nick de usuario" class="form-control input-md" required="">
  		 </div>
 		</div>
 		<!-- Button -->
 		<div class="form-group">
   		 <label class="col-md-4 control-label" for=""></label>
   		 <div class="col-md-4">
-    	   <button id="" name="" class="btn btn-success">Guardar</button>
+    	   <button id="" type="submit" class="btn btn-success">Guardar</button>
   	   	 </div>
 		</div>
 	   </fieldset>

@@ -14,17 +14,19 @@
   <div class="nav navbar navbar-inverse">
    	 <button class="btn btn-default pull-right">Salir</button>
   </div>
-  <div class="col-xs-3">
+  <div class="col-xs-3 well">
     <ul class="list-group">
      <li class="list-group-item" id="opcion_crear_afilia"><a href="#">Crear Afiliado</a></li>
      <li class="list-group-item" id="opcion_crear_medico"><a href="#">Crear Medico</a></li>	
      <li class="list-group-item" id="opcion_ver_citas"><a href="#">Ver Citas</a></li>	
      <li class="list-group-item" id="opcion_ver_client"><a href="#">Ver Clientes</a></li>
-     <li class="list-group-item" id="opcion_ver_medic"><a href="#">Ver Medicos</a></li>	
+     <li class="list-group-item" id="opcion_ver_medic"><a href="#">Ver Medicos</a></li>
+     <li class="list-group-item" id="opcion_config"><a href="#">Agregar Especialista</a></li>	
+     <li class="list-group-item" id="opcion_file"><a href="#">Subir archivo</a></li>	
     </ul>
   </div>
   <div class="col-xs-9" id="panel_opcion"> 
-    	
+    
   </div>
  </div>
 </body>
@@ -50,5 +52,14 @@
    $("#opcion_ver_medic").click(function(){
    	 $("#panel_opcion").load("View/medico/list_medicos.php");
    });
+   $("#opcion_config").click(function(){
+   	 $("#panel_opcion").load("View/admin/add_especialista.php");
+   });
+   $("#opcion_file").click(function(){
+   	 $("#panel_opcion").load("View/admin/subir_archivo.php");
+   });
+
+
+   
  });
 </script>

@@ -6,11 +6,11 @@
        	 <label>Tipo de documento</label>
        	 <select class="form-control"></select>
        	 <label>Documentos</label>
-       	 <input type="text" name="" clas="form-control">
+       	 <input type="text" name="inp_document" clas="form-control">
         </div>
        	<div class="container-fluid">
        	 <label>Tipo de especialidad</label>
-       	 <select class="form-control">
+       	 <select name="slt_tip_especia" class="form-control">
        	  <option></option>
        	  <option value="1">Higiene Oral</option>	
        	  <option value="2">Medicina General</option>	
@@ -18,15 +18,15 @@
         </div>
         <div class="container-fluid">
        	 <label>Medico</label>
-       	 <select class="form-control"></select>
+       	 <select name="slt_medico" class="form-control"></select>
         </div>
         <div class="container-fluid">
        	 <label>Acompañante</label>
-       	 <input type="text" class="form-control">
+       	 <input type="text" name="inp_acompa" class="form-control">
         </div>
         <div class="container-fluid">
          <label>Fecha</label>
-       	 <input type="date" class="form-control">
+       	 <input type="date" name="inp_fecha" class="form-control">
         </div>
         <div class="container-fluid">
          <br>

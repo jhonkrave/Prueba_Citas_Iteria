@@ -3,11 +3,14 @@
      <form id="form_user">
       <div class="col-xs-7">
        <label>documento</label>
-       <input type="text" name="inp_document" class="form-control">
+       <input type="text" name="inp_document" class="form-control" required>
       </div>
       <div class="col-xs-3">
         <label>Tipo de documento</label>
-        <select name="form_tip_docu" class="form-control"></select>
+        <select name="form_tip_docu" class="form-control" required>
+          <option value="1">Cedula</option>
+          <option value="2">Targeta de identidad</option>
+        </select>
       </div>
       <div class="col-xs-2"> <br>
        <button class="btn btn-default" type="submit"><i class="glyphonico glyphonico-search"></i> Buscar</button>

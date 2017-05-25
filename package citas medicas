@@ -1,0 +1,31 @@
+create or replace package Cita_medica as
+   TYPE type_cursor IS REF CURSOR;
+   procedure ver_medicos();
+   procedure ver_afiliados();
+   procedure ver_all_citas();
+   procedure ver_citas_by_afiliad(afi_id cita.afiliado_id%TYPE);
+   procedure Logueo(user_ Usuario.username%TYPE,pass Usuario.password_Usu%TYPE);
+   procedure Ver_cie10();
+   procedure Ver_sub_cie10(id_sub subcategoria_cie10.categoria_id%TYPE);
+   procedure Ver_especialista();
+   
+   procedure Insert_afiliado(tipo persona.tipo_identificacion_id%TYPE,ide persona.num_ident%TYPE,nombre persona.firstname%TYPE,apell persona.lastname%TYPE,tel persona.phone_number1%TYPE,cel persona.phone_nunmber2%TYPE,tipo afiliado.tipo_afiliacion%TYPE);
+   procedure Insert_medico(tipo persona.tipo_identificacion_id%TYPE,ide persona.num_ident%TYPE,nombre persona.firstname%TYPE,apell persona.lastname%TYPE,tel persona.phone_number1%TYPE,cel persona.phone_nunmber2%TYPE,tipo_especia medico_especialidad.especialidad_id%TYPE);
+   procedure Insert_triage(id_afilia triage.afiliado_id%TYPE,fecha triage.fecha%TYPE,aspect triage.aspecto_id%TYPE,persion_art triage.presion_Arterial%TYPE,frecu_resp triage.frec_respiratoria%TYPE,frec_cardia triage.frec_cardiaca%TYPE,tension triage.tension%TYPE,glas_ocu triage.glasgow_ocular%TYPE,glas_verb triage.glasgow_verbal%TYPE,
+                         glas_motor triage.glasgow_motora%TYPE,alert triage.alerta%TYPE,obnub triage.obnublado%TYPE,estup triage.estupor%TYPE,coma triage.coma%TYPE,sinto triage.sintomas%TYPE,antece triage.antec_relevantes%TYPE,subcat triage.subcategoria_id%TYPE,nivel_ triage.nivel_triage_id%TYPE);
+   procedure Insert_cita(id_afilia cita.afiliado_id%TYPE,id_medico cita.medico_id%TYPE,fecha_ cita.fecha%TYPE,stado cita.estado%TYPE);
+   procedure Insert_cie10(ide categoria_cie10.id_subcategoria%TYPE,descrip categoria_cie10.descripcion%TYPE);
+   procedure Insert_sub_cie10(id_sub subcategoria_cie10.subcategoria_id%TYPE,descrip subcategoria_cie10.descripcion%TYPE,id_cat subcategoria_cie10.categoria_id%TYPE);
+   procedure Insert_especialista(id_espe especialidad.especialidad_id%TYPE,descrip especialidad.descripcion%TYPE);
+   
+   function datos (v_cod emple.emp_no%TYPE)
+      return t_reg_emple;
+end Cita_medica;
+/
+
+create or replace PACKAGE BODY Cita_medica AS
+ ltc_datos type_cursor;
+    BEGIN 
+     OPEN ltc_datos FOR
+     
+    END fn_ObtDatosArch;
