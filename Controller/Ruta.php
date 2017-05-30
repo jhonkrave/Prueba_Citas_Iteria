@@ -33,7 +33,8 @@ class Ruta{
 	       isset($request['get_agenda_medico']) or// lista las fechas que esta ocupado el medico, solo para select
 	       isset($request['get_especialidad']) or // lista en select las especialidades 
 	       isset($request['get_all_medicos']) or 
-	       isset($request['get_medicos_by_specialidad'])
+	       isset($request['get_medicos_by_specialidad']) or 
+	       isset($request['get_sintomas']) // para los select
 	     ){ 
 	       include_once "MedicoController.php";
 	       $controller = new MedicoController($request);

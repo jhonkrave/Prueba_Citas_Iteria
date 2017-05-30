@@ -34,6 +34,11 @@ include_once "../Model/medicoModel.php";
  	   $respon =  $this->Get_agenda_disponible($request['id']);
  	  }
  	 }
+
+   if(isset($request['get_sintomas'])){
+     $respon = $this->Get_sintomas();
+   }
+   
    echo json_encode($respon);
  	}
 
@@ -80,9 +85,11 @@ include_once "../Model/medicoModel.php";
     return $x;
   }
 
-  private function Get_subespecialidades(){
-    return $this->medico->Get_subespecialidades();
+  private function Get_sintomas(){ // cie10
+    return $this->medico->verCategoria();
   }
+
+  
  }
 
 
