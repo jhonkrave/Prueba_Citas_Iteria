@@ -69,6 +69,9 @@ class Medico{
 			return $array;
 		}
 
+		public function Get_triage_by_user($id){
+			/* seleccionar para buscar un triage */
+		}
 
 
 		public function Set_especialidad($array = array()){
