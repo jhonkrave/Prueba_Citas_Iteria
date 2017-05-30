@@ -1,5 +1,12 @@
+<style type="text/css">
+  #calendar {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+</style>
 <div class="container-fluid" id="panel_citas"> 
-	 <ul class="nav nav-tabs">
+	<!--
+   <ul class="nav nav-tabs">
   	  <li class="active"><a data-toggle="tab" href="#lunes">Lunes</a></li>
   	  <li><a data-toggle="tab" href="#martes">Martes</a></li>
   	  <li><a data-toggle="tab" href="#miercoles">Miercoles</a></li>
@@ -38,5 +45,7 @@
     	<h3>Domingo</h3>
     	<p>Some content in menu 2.</p>
   	  </div>
-	 </div>
-    </div>
+	 </div>-->
+  
+</div>
+ <div id='calendar'></div>

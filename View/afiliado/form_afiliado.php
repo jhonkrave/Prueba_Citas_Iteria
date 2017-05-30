@@ -3,14 +3,8 @@
        <fieldset>
        	<legend>Registrar cita</legend>
        	<div class="container-fluid">
-       	 <label>Tipo de documento</label>
-       	 <select class="form-control"></select>
-       	 <label>Documentos</label>
-       	 <input type="text" name="inp_document" clas="form-control">
-        </div>
-       	<div class="container-fluid">
        	 <label>Tipo de especialidad</label>
-       	 <select name="slt_tip_especia" class="form-control">
+       	 <select name="slt_tip_especia" class="form-control" required>
        	  <option></option>
        	  <option value="1">Higiene Oral</option>	
        	  <option value="2">Medicina General</option>	
@@ -18,7 +12,7 @@
         </div>
         <div class="container-fluid">
        	 <label>Medico</label>
-       	 <select name="slt_medico" class="form-control"></select>
+       	 <select name="slt_medico" class="form-control" required></select>
         </div>
         <div class="container-fluid">
        	 <label>Acompañante</label>
@@ -26,12 +20,13 @@
         </div>
         <div class="container-fluid">
          <label>Fecha</label>
-       	 <input type="date" name="inp_fecha" class="form-control">
+       	 <select class="form-control" name="slt_fecha" required></select>
         </div>
         <div class="container-fluid">
          <br>
          <button class="btn btn-default pull-right">Guarda</button>
+         <input type="hidden" name="register_cita">
         </div>
        </fieldset>	
      </form>
-    </div>
+</div>

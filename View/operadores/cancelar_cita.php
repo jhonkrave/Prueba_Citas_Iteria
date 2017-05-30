@@ -3,19 +3,20 @@
        <form id="form_cancel_cita">
         <div class="col-xs-4">
           <label>Documento</label>
-          <select class="form-control">
-           <option>Targeta de identidad</option>
-           <option>Cedula</option>
-           <option>Tarjeta de extrangeria</option>
+          <select class="form-control" name="slt_tipo_document" required>
+           <option value="1">Targeta de identidad</option>
+           <option value="2">Cedula</option>
+           <option value="3">Tarjeta de extrangeria</option>
           </select>
         </div> 
         <div class="col-xs-6">
          <br>
          <div class="col-xs-8">
-          <input type="text" name="inp_document" class="form-control">
+          <input type="text" name="inp_document" class="form-control" required>
          </div>
          <div class="col-xs-4">
           <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+          <input type="hidden" name="listar_citas_user">
          </div>
         </div>
        </form>

@@ -2,7 +2,7 @@
      <form id="form_buscar">
       <div class="col-xs-6">
        <label>Tipo de identidad</label>
-       <select class="form-control">
+       <select class="form-control" name="slt_tip_ident" required>
         <option value=""></option>
       	<option value="1">Tarjeta de Identidad</option>
       	<option value="2">Cedula</option>
@@ -11,7 +11,7 @@
       </div>
       <div class="col-xs-4">
         <label>Documento</label>
-      	<input type="text" class="form-control" name="inp_tip_ident">
+      	<input type="text" class="form-control" name="inp_tip_ident" required> 
       </div>
       <div class="col-xs-2"><br>
       	<button class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>	
@@ -24,12 +24,12 @@
       	<legend>Registrar Triage</legend>
       	<div class="container-fluid">
       	 <div class="col-xs-3">
-      	  <label>Fecha</label>
-      	  <input class="form-control" type="date" name="inp_fecha">
+      	  <label>Fecha</label> 
+      	  <input class="form-control" type="date" name="inp_fecha" required>
       	 </div>
       	 <div class="col-xs-9">
       	  <label>Nivel del triage</label>
-      	  <select class="form-control" name="slt_nivel_triage">
+      	  <select class="form-control" name="slt_nivel_triage" required>
       	  	<option></option>
       	  	<option value="1">Nivel 1</option>
       	  	<option value="2">Nivel 2</option>
@@ -43,15 +43,15 @@
       	<div class="container-fluid">
       	 <div class="col-xs-3">
       	  <label>Presion arterial</label>
-      	  <input type="text" class="form-control" name="">
+      	  <input type="text" class="form-control" name="inp_pres_art" required>
       	 </div>
       	 <div class="col-xs-3">
       	  <label>Frecuencia respiratoria</label>
-      	  <input type="text" class="form-control" name="">
+      	  <input type="text" class="form-control" name="inp_respira" required>
       	 </div>
       	 <div class="col-xs-3">
       	  <label>Frecuencia cardiaca</label>
-      	  <input type="text" class="form-control" name="">
+      	  <input type="text" class="form-control" name="inp_frecuenc" required>
       	 </div>
       	</div>
       	<div class="container-fluid padding-0">
@@ -59,71 +59,73 @@
       	  <div class="col-xs-6 padding-0">
       	    <div class="container-fluid">	
       	   	  <label>Tension</label>
-      	   	  <input type="text" class="form-control" name="inp_tension">
+      	   	  <input type="text" class="form-control" name="inp_tension" required>
       	    </div>
       	    <div class="container-fluid padding-0">
       	     <fieldset>
       	   	  <legend>Glasrow</legend>
       	   	  <div class="col-xs-4">
       	   	   <label>Verbal</label>
-      	   	   <select class="form-control">
-      	   	    <option>1</option>
-      	   	    <option>2</option>
-      	   	    <option>3</option>
-      	   	    <option>4</option>
-      	   	    <option>5</option>
+      	   	   <select class="form-control" name="slt_verbal" required>
+      	   	    <option value="1">1</option>
+      	   	    <option value="2">2</option>
+      	   	    <option value="3">3</option>
+      	   	    <option value="4">4</option>
+      	   	    <option value="5">5</option>
       	   	   </select>
       	   	  </div>
       	   	  <div class="col-xs-4">
       	   	   <label>Ocular</label>
-      	   	   <select class="form-control">
-      	   	    <option>1</option>
-      	   	    <option>2</option>
-      	   	    <option>3</option>
-      	   	    <option>4</option>
-      	   	    <option>5</option>
+      	   	   <select class="form-control" name="slt_ocular" required>
+      	   	    <option value="1">1</option>
+      	   	    <option value="2">2</option>
+      	   	    <option value="3">3</option>
+      	   	    <option value="4">4</option>
+      	   	    <option value="5">5</option>
       	   	   </select>	
       	   	  </div>
       	   	  <div class="col-xs-4">
-      	   	   <label>Motora</label>
-      	   	   <select class="form-control">
-      	   	    <option>1</option>
-      	   	    <option>2</option>
-      	   	    <option>3</option>
-      	   	    <option>4</option>
-      	   	    <option>5</option>
+      	   	   <label>Motora</label >
+      	   	   <select class="form-control" name="slt_motora" required>
+      	   	    <option></option>
+                <option value="1">1</option>
+      	   	    <option value="2">2</option>
+      	   	    <option value="3">3</option>
+      	   	    <option value="4">4</option>
+      	   	    <option value="5">5</option>
       	   	   </select>	
       	   	  </div>
-      	     </fieldset>
+      	     </fieldset> 
       	    </div>
       	    <div class="container-fluid padding-0">
       	     <div class="col-xs-3">Alerta</div>
-      	     <div class="col-xs-9"><input type="text" class="form-control" name="inp_alert"></div>
+      	     <div class="col-xs-9"><input type="text" class="form-control" name="inp_alert" required></div>
       	     <div class="col-xs-3">Obnublado</div>
-      	     <div class="col-xs-9"><input type="text" class="form-control" name="inp_obnubla"></div>
+      	     <div class="col-xs-9"><input type="text" class="form-control" name="inp_obnubla" required></div>
       	    </div>
       	  </div><!--col-xs-6-->
       	  <div class="col-xs-6 padding-0">
       	   <div class="container-fluid padding-0">
       	   	 <label>Estupor</label>
-      	   	 <input type="text" name="" class="form-control">
+      	   	 <input type="text" name="inp_estup" class="form-control" required>
       	   </div>
       	   <div class="container-fluid">
       	   	 <label>Coma</label>
-      	   	 <input type="text" name="" class="form-control">
+      	   	 <input type="text" name="inp_coma" class="form-control" required>
       	   </div>
       	   <div class="container-fluid">
       	   	 <label>Sintomas</label>
-      	   	 <input type="text" name="" class="form-control">
+      	   	 <input type="text" name="inp_sinto" class="form-control" required>
       	   </div>
       	   <div class="container-fluid">
       	    <fieldset>
       	     <legend>Categoria sintoma</legend>
              <div class="col-xs-6">
-              <select class="form-control"></select>
+              <select class="form-control" name="slt_cate_sint" required></select>
              </div>
              <div class="col-xs-6">
-              <select class="form-control"></select>	
+              <legend>Subcategoria sintoma</legend>
+              <select class="form-control" name="slt_sub_cate" required></select>	
              </div> 
       	    </fieldset>
       	   </div>
@@ -133,15 +135,20 @@
       	  <div class="container-fluid padding-0">
       	   <fieldset>
       	   	<legend>Antecedentes</legend>
-      	   	<textarea rows="4" class="form-control"></textarea>
+      	   	<textarea rows="4" name="txt_area" class="form-control" required></textarea>
       	   </fieldset>
       	  </div>
       	  <div class="container-fluid padding-0">
       	   <fieldset>
       	   	<legend>Descripcion de aspecto</legend>
-      	   	<textarea rows="4" class="form-control"></textarea>
+      	   	<textarea rows="4" name="text_descrip_aspect" class="form-control" required></textarea>
       	   </fieldset>
       	  </div>
+          <div class="container-fluid padding-0">
+            <button type="button" class="btn btn-default pull-right">Guardar</button>
+            <input type="hidden" name="register_triage">
+            <input type="hidden" name="hidden_user">
+          </div>
       	 </div>	
       	</div>
       </fieldset>	

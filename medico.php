@@ -11,16 +11,16 @@
 </head>
 <body>
  <div class="container-fluid">
-  <div class="nav navbar">
-   	 <button class="btn btn-default pull-right">Salir</button>
-  </div>
-  <div class="col-xs-3">
+  <div class="nav navbar navbar-inverse">
+     <button class="btn btn-default pull-right">Salir</button>
+   </div>
+  <div class="col-xs-3 well">
     <ul class="list-group">
      <li class="list-group-item" id="opcion_crear"><a href="#">Ver Agenda</a></li>
      <li class="list-group-item" id="opcion_consult"><a href="#">Crear Triage</a></li>	
     </ul>
   </div>
-  <div class="col-xs-9" id="panel_opcion"> 
+  <div class="col-xs-9 well" id="panel_opcion"> 
   </div>
  </div>
 </body>
@@ -32,9 +32,102 @@
   $(function(){
       $("#opcion_crear").click(function(){
         $("#panel_opcion").load("View/medico/agenda.php");
+        Get_agenda();
       });
       $("#opcion_consult").click(function(){
         $("#panel_opcion").load("View/medico/triage.php");
+        
       });
+      
+      function Get_agenda(){
+        setTimeout(function(){
+         var form = {"get_all_citas":""};
+         $.post("Controller/Ruta.php",{"request":JSON.stringify(form)},function(data){
+          var data = $.parseJSON(data);
+           alert("guardado con exito");
+         });
+        },100);
+      }
+
+      function serealizar(form){
+       var form_ = $("#"+form).serializeArray();
+       var json = {};
+       $.each(form_,function(key,val){
+        json[val.name] = val.value;
+       });
+       return json;
+      }
+      function Enviar(form){
+        //if(Validar(form)){
+        var json = serealizar(form);
+        $.post("Controller/Ruta.php",{"request":JSON.stringify(json)},function(data){
+         var data = $.parseJSON(data);
+         if(data.exito){
+          alert("guardado con exito");
+         }
+        });
+        //}
+      }
+      function Buscar(){
+        var form = serealizar("form_buscar");
+        var params = {"buscar_afiliao":form};
+        $.post("Controller/Ruta.php",{"request":JSON.stringify(params)},function(data){
+          var data = $.parseJSON(data);
+          if(data !== null){
+            $("input[name='hidden_user']").val(data.cedula);
+          }
+        });
+      }
+      $(document).on('submit',"#form_buscar",function(e){
+        e.preventDefault();
+        Buscar();
+      });
+      $(document).on('submit','#form_register_triage',function(e){
+        e.preventDefault();
+        Enviar("form_register_triage");
+      });
+
+
+
+    function calendar(){ 
+     $('#calendar').fullCalendar({
+        header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay,listWeek'
+      },
+      defaultDate: '2017-05-12',
+      navLinks: true, // can click day/week names to navigate views
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+        events: function(start, end, timezone, callback) {
+           var params = {"get_all_citas":""};
+           $.ajax({
+              url: 'Controller/Ruta.php',
+              type: 'POST',
+              dataType: 'json',
+              data: {
+                request:JSON.stringify(params),
+                start: start.format(),
+                end: end.format()
+              },
+              success: function(doc) {
+                var events = [];
+                if(!!doc.result){
+                    $.map( doc.result, function( r ) {
+                        events.push({
+                            id: r.id,
+                            title: r.title,
+                            start: r.date_start,
+                            end: r.date_end
+                        });
+                    });
+                }
+                callback(events);
+              }
+           });
+        }
+     });
+    }
   });
 </script>

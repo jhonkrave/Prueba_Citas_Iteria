@@ -14,6 +14,13 @@
    <form id="form_register">
     <fieldset>
     	<legend>Registrar Usuario</legend>
+        <div class="form-group-inline">
+          <label>Tipo de documento</label>
+          <select name="slt_tip_docu" class="form-control" required>
+           <option value="1">Cedula</option>
+           <option value="2">Targeta de identidad</option>
+          </select>
+        </div>
     	<div class="form-group-inline">
     	  <label>Documento</label>
     	  <input class="form-control" type="text" name="inp_document">	
