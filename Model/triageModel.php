@@ -2,7 +2,7 @@
 /**
 * 
 */
-class Triage extends Mastermodel
+class Triage 
 {
 	
 	// function crea triage

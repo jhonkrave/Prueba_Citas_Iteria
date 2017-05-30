@@ -66,11 +66,11 @@
       }
       function Buscar(){
         var form = serealizar("form_buscar");
-        var params = {"buscar_afiliao":form};
-        $.post("Controller/Ruta.php",{"request":JSON.stringify(params)},function(data){
+        $.post("Controller/Ruta.php",{"request":JSON.stringify(form)},function(data){
           var data = $.parseJSON(data);
           if(data !== null){
-            $("input[name='hidden_user']").val(data.cedula);
+            $("input[name='hidden_user']").val(data[0].id);
+            $("#panel_register_triage").css('display','block');
           }
         });
       }
@@ -89,6 +89,21 @@
          });
         },200);
       }
+
+      $(document).on('change',"select[name='slt_cate_sint']",function(){
+        var id = $(this).val();
+        $("select[name='slt_sub_cate']").html("");
+        var params = {"Subsintomas":"","id_select":id};
+        $.post("Controller/Ruta.php",{"request":JSON.stringify(params)},function(data){
+          var data = $.parseJSON(data);
+          if(data !== null){
+            $.each(data,function(key,val){
+              var t = '<option value='+val.id+'>'+val.name+'</option>';
+              $(t).appendTo($("select[name='slt_sub_cate']")); 
+            });
+          }
+        }); 
+      });
 
       $(document).on('submit',"#form_buscar",function(e){
         e.preventDefault();

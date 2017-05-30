@@ -46,7 +46,9 @@ class Ruta{
 	       include_once "TriageController.php";
 	       $controller = new TriageController($request);
 	    }
-	    if(isset($request[''])){
+	    if(isset($request['Subsintomas'])){
+	    	include_once "../Model/SintomasModel.php";
+	    	$controller = new SintomasModel($request);
 	    }
 	    return $controller;
 	 }

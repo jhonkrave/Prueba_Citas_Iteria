@@ -9,7 +9,7 @@ class TriageController{
 		  $respon =	$this->Add_triage($request);
 		}
 		if(isset($request['get_triage_by_user'])){
-		 if(Validar::validarVacios($request['id_afi']){
+		 if(Validar::validarVacios($request['id_afi'])){
 		  $respon = $this->Get_triage_by_afiliado();
 		 }
 		}
@@ -24,7 +24,10 @@ class TriageController{
 			sintomas VARCHAR2(40),antecedentes_relevantes VARCHAR2(40),id_subcategoria VARCHAR2(10),id_nivel_triage VARCHAR2(10) */
 		if(Validar::validarVacios($request['inp_fecha']) and 
 			Validar::validarVacios($request['slt_nivel_triage']) and
-			Validar::validarVacios($request['inp_pres_art']) and
+			Validar::validarVacios($request['inp_pres_art_dias']) and
+			Validar::validarVacios($request['inp_pres_art_sis']) and
+			Validar::Validar_numerico($request['chck_alert']) or Validar::Validar_numerico($request['chck_obnubla']) or
+			Validar::Validar_numerico($request['chck_coma']) or Validar::Validar_numerico($request['chck_tension']) and
 			Validar::validarVacios($request['inp_respira']) and
 			Validar::validarVacios($request['inp_frecuenc']) and
 			Validar::validarVacios($request['inp_tension']) and

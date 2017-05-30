@@ -33,8 +33,8 @@ class User
 			/* valida por email o nick y password */
 			/* tiene que devolver un array asociativo con 
 			  $respon['perfil'] // perfil de usuario (administrador,operador, afiliado, medico)
-			  $respon['id'] // id del afiliado
-			  
+			  $respon['id'] // id del afiliado*/
+
 		}
 }
 ?>

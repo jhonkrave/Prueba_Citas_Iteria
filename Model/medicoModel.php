@@ -18,15 +18,15 @@ class Medico{
 		}
 
 		public function Add_medico($array = array()){
-		 /* recibe estos parametros 
- 		 $request['inp_document']
- 		 $request['inp_nomb']
- 		 $request['inp_apell']
- 		 $request['inp_tel']
- 		 $request['inp_cel']
- 		 $request['rdio_sex']
- 		 $request['slt_especia']	
- 		 $request['inp_nick']*/
+		 /* recibe estos parametros */
+ 		 $request['inp_document'];
+ 		 $request['inp_nomb'];
+ 		 $request['inp_apell'];
+ 		 $request['inp_tel'];
+ 		 $request['inp_cel'];
+ 		 $request['rdio_sex'];
+ 		 $request['slt_especia'];	
+ 		 $request['inp_nick'];
 		 $person = new Persona();
 		 $respon = $person->crearPersona($array); // dentro de esta funcion debe insertar en la tabla persona, si es exitoso la insercion, debe pasar el if siguiente e insertar en la tabla medicos
 		 if(isset($respon['exito'])){

@@ -4,7 +4,7 @@ class Persona{
 
 	//funcion de crear persona 
 		public function crearPersona($array = array()){
-
+		 
 			$array=array(
 				'PERSONA_ID'=>$persona_id,
 				'TIPO_IDENTIFICACION_ID'=>$tipo_identificacion_id,
