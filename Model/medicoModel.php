@@ -32,6 +32,9 @@ class Medico{
 		 if(isset($respon['exito'])){
 		   $request['slt_especia'];
 		   $request['inp_document'];	
+		
+
+			   //insercion del packete
 		 }
 		}
 
