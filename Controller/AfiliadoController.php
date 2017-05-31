@@ -1,5 +1,5 @@
 <?php
-include_once "../Model/Afiliado_Model.php";
+include_once "../Model/AfiliadoModel.php";
 include_once "Validar.php";
 class AfiliadoController{
 	private $afi = null;
